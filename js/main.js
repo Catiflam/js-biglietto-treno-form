@@ -7,8 +7,6 @@ const ticketMessage = document.getElementById("final-message");
 
 const nameElement = document.getElementById("name-element");
 const surnameElement = document.getElementById("surnaname-element");
-const ageElement = document.getElementById("age-element");
-const kmElement = document.getElementById("km-element");
 
 sendButton.addEventListener("click", function () {
 	const nameValue = userName.value;
@@ -27,23 +25,8 @@ sendButton.addEventListener("click", function () {
 
 	const tiketName = nameValue + " " + surnameValue;
 
-	// const userText = userAge.value;
-	// textParagrp.innerHTML += userText;
-
-	// userAge.value = "";
-	// let eurokm = 0.21;
-	// const tiketprice = userkm * eurokm;
-	// let userdiscount = 0;
-
-	// if (userAge < 18) {
-	// 	userdiscount = tiketprice * 0.2;
-	// } else if (userAge > 65) {
-	// 	userdiscount = tiketprice * 0.4;
-	// }
-
-	// const ticketfinalprice = tiketprice - userdiscount;
-
-	// const finalmessage = ticketfinalprice;
+	nameElement.innerHTML = tiketName;
+	ticketMessage.innerHTML = "€ " + ticketPrice.toFixed(2);
 });
 
 // # considerando che 1km =0.21 euro
