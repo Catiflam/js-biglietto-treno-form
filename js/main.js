@@ -1,47 +1,50 @@
+const userName = document.getElementById("user-name");
+const userSurname = document.getElementById("user-surname");
 const userAge = document.getElementById("user-age");
-const sendButton = document.getElementById("send-text");
-const sendButton2 = document.getElementById("send-text2");
-const textParagrp = document.getElementById("test");
-const textParagrp2 = document.getElementById("test-2");
 const userkm = document.getElementById("user-km");
-const finalbutton = document.getElementById("finalprice");
+const sendButton = document.getElementById("generate-tiket");
+const ticketMessage = document.getElementById("final-message");
 
-// # chiedere l'età del passeggero
+const nameElement = document.getElementById("name-element");
+const surnameElement = document.getElementById("surnaname-element");
+const ageElement = document.getElementById("age-element");
+const kmElement = document.getElementById("km-element");
+
 sendButton.addEventListener("click", function () {
-	console.log("userAge");
-	const userText = userAge.value;
-	textParagrp.innerHTML = userText;
+	const nameValue = userName.value;
+	const surnameValue = userSurname.value;
+	const ageValue = userAge.value;
+	const kmValue = userkm.value;
+
+	const ticketCost = 0.21;
+	let ticketPrice = ticketCost * kmValue;
+
+	if (ageValue < 18) {
+		ticketPrice *= 0.8;
+	} else if (ageValue > 65) {
+		ticketPrice *= 0.6;
+	}
+
+	const tiketName = nameValue + " " + surnameValue;
+
+	// const userText = userAge.value;
+	// textParagrp.innerHTML += userText;
+
+	// userAge.value = "";
+	// let eurokm = 0.21;
+	// const tiketprice = userkm * eurokm;
+	// let userdiscount = 0;
+
+	// if (userAge < 18) {
+	// 	userdiscount = tiketprice * 0.2;
+	// } else if (userAge > 65) {
+	// 	userdiscount = tiketprice * 0.4;
+	// }
+
+	// const ticketfinalprice = tiketprice - userdiscount;
+
+	// const finalmessage = ticketfinalprice;
 });
-
-// # chiedere numero di km da percorrere
-sendButton2.addEventListener("click", function () {
-	const userText = userkm.value;
-	textParagrp2.innerHTML = userText;
-});
-
-finalbutton.addEventListener("click", function () {
-	const finaltext = finalmessage.value;
-	finalparag.innerHTML = finaltext;
-});
-
-let eurokm = 0.21;
-const tiketprice = userkm * eurokm;
-let userdiscount = 0;
-
-if (userAge < 18) {
-	userdiscount = tiketprice * 0.2;
-} else if (userAge > 65) {
-	userdiscount = tiketprice * 0.4;
-}
-
-const ticketfinalprice = tiketprice - userdiscount;
-
-const finalmessage = ticketfinalprice;
-// il prezzo finale del tuo biglietto è €
-
-// ${ticketfinalprice}`;
-
-const finalparag = document.getElementById("Tiketprice");
 
 // # considerando che 1km =0.21 euro
 // # definire l'età del passeggiero

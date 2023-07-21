@@ -10,25 +10,32 @@
 		<script type="text/Javascript" src="./js/main.js" defer></script>
 	</head>
 	<body>
-		<div class="container mt-5">
-			<div class="row">
-				<div class="col-6">
-					<input id="user-age" class="form-control w-25" type="text" placeholder="Inserisci la tua età" />
-					<button id="send-text" class="btn btn-primary mt-2">Send</button>
-					<hr />
-					<p id="test"></p>
+		<div class="container px-4 text-center mt-5">
+			<div class="row gx-5">
+				<div class="col">
+					<div class="p-3 border bg-light">
+						<label for="name-input">Name</label>
+						<input id="user-name" class="form-control w-100%" type="text" />
+					</div>
 				</div>
-				<div class="col-6">
-					<input id="user-km" class="form-control w-25" type="text" placeholder="Inserisci i km da percorrere" />
-					<button id="send-text2" class="btn btn-primary mt-2">Send</button>
-					<hr />
-					<p id="test-2"></p>
+				<div class="col">
+					<div class="p-3 border bg-light"><label for="surname-input">Cognome</label><input id="user-surname" class="form-control w-100%" type="text" /></div>
 				</div>
+				<div class="col">
+					<div class="p-3 border bg-light"><label for="age-input">Età</label><input id="user-age" class="form-control w-100%" type="text" /></div>
+				</div>
+				<div class="col">
+					<div class="p-3 border bg-light"><label for="km-input">Km</label><input id="user-km" class="form-control w-100%" type="text" /></div>
+				</div>
+				<button id="generate-tiket" class="btn btn-primary mt-2 w-50%">Send text</button>
 			</div>
-			<div>
-				<button id="finalprice" class="btn btn-primary mt-2">Your ticket</button>
-				<p id="Tiketprice"></p>
-			</div>
+			<p id="final-message"></p>
+		</div>
+		<div class="container">
+			<p id="name-element"></p>
+			<p id="surnaname-element"></p>
+			<p id="age-element"></p>
+			<p id="km-element"></p>
 		</div>
 	</body>
 </html>
